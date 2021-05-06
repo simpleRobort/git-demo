@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <script src="js/jQuery.min.js"></script>-->
+    <script src="js/pinyin.js"></script>
+    <style>
+        body {
+            background-color: #384ecc;
+
+        }
+        i {
+            font-style: normal;
+        }
+        .leftsearch {
+            float: left;
+            margin-left: 50px;
+            margin-top: 35px;
+        }
+        .search {
+            position: relative;
+            width: 308px;
+            height: 65px;
+            padding-left: 50px;
+            border-bottom: 3px solid white;
+            background: url("upload/icon.png") no-repeat 10px ;
+        }
+        .search h4 {
+            color: white;
+            position: absolute;
+            top: -1px;
+            left: 70px;
+            font-size: 19px;
+        }
+        .active {
+            margin-top: 10px;
+            height: 62px;
+        }
+        .active span {
+            display: block;
+            text-align: center;
+            line-height: 61px;
+            font-size: 24px;
+            color: white;
+            float: left;
+            width: 172px;
+            height: 61px;
+            margin-right: 15px;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 10px;
+        }
+        table {
+            width: 350px;
+            margin-left: 8px;
+        }
+        table tr td {
+            display: inline-block;
+            width: 48px;
+            height: 50px;
+            background-color: rgba(91,135,173,0.3);
+            color: white;
+            line-height: 50px;
+            text-align: center;
+            font-size: 18px;
+            margin-right: 7px;
+            margin-top: 5px;
+        }
+        .rightcommend {
+            float: left;
+            margin-left: 60px;
+            color: white;
+        }
+        .rightcommend img {
+            border: 4px solid transparent;
+        }
+        .like {
+
+        }
+        .searchresult {
+            display: none;
+        }
+        .like_hd {
+            width: 740px;
+            position: relative;
+        }
+        .like_hd h2{
+            margin-top: 20px;
+            display: block;
+        }
+        .like_hd div {
+            width: 160px;
+            margin-right: 20px;
+            height: 220px;
+            float: left;
+            margin-bottom: 50px;
+        }
+        .like_hd  img {
+            width: 100%;
+            height: 100%;
+        }
+        .like_hd div>span {
+            display: block;
+            width: 100%;
+            height: 20px;
+            margin-top: -3px;
+            font-size: 18px;
+            text-align: center;
+
+        }
+        .like_hd h3 {
+            position: absolute;
+            left: 550px;
+            top: -13px;
+        }
+        .currentactive {
+            background-color: rgba(255, 255, 255, .4)!important;
+        }
+        .currentimg {
+            border: 4px solid yellow!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="leftsearch">
+        <div class="search">
+            <h4>请输入影片的首字母</h4>
+        </div>
+        <div class="active">
+            <span class="currentactive">清空</span>
+            <span>退格</span>
+        </div>
+            <table>
+                <tbody>
+                <tr>
+                    <td id="area1_div_0">A</td>
+                    <td id="area1_div_1">B</td>
+                    <td id="area1_div_2">C</td>
+                    <td id="area1_div_3">D</td>
+                    <td id="area1_div_4">E</td>
+                    <td id="area1_div_5">F</td>
+                </tr>
+                <tr>
+                    <td id="area1_div_6">G</td>
+                    <td id="area1_div_7">H</td>
+                    <td id="area1_div_8">I</td>
+                    <td id="area1_div_9">J</td>
+                    <td id="area1_div_10">K</td>
+                    <td id="area1_div_11">L</td>
+                </tr>
+                <tr>
+                    <td id="area1_div_12">M</td>
+                    <td id="area1_div_13">N</td>
+                    <td id="area1_div_14">O</td>
+                    <td id="area1_div_15">P</td>
+                    <td id="area1_div_16">Q</td>
+                    <td id="area1_div_17">R</td>
+                </tr>
+                <tr>
+                    <td id="area1_div_18">S</td>
+                    <td id="area1_div_19">T</td>
+                    <td id="area1_div_20">U</td>
+                    <td id="area1_div_21">V</td>
+                    <td id="area1_div_22">W</td>
+                    <td id="area1_div_23">X</td>
+                </tr>
+                <tr>
+                    <td id="area1_div_24">Y</td>
+                    <td id="area1_div_25">Z</td>
+                    <td id="area1_div_26">1</td>
+                    <td id="area1_div_27">2</td>
+                    <td id="area1_div_28">3</td>
+                    <td id="area1_div_29">4</td>
+                </tr>
+                <tr>
+                    <td id="area1_div_30">5</td>
+                    <td id="area1_div_31">6</td>
+                    <td id="area1_div_32">7</td>
+                    <td id="area1_div_33">8</td>
+                    <td id="area1_div_34">9</td>
+                    <td id="area1_div_35">0</td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+    <div class="rightcommend">
+        <div class="like">
+            <div class="like_hd">
+                <h2>
+                    你可能喜欢:
+                </h2>
+                <div><a href="javascript:;"><img src="" alt=""></a><span></span></div>
+                <div><a href="javascript:;"><img src="" alt=""></a><span></span></div>
+                <div><a href="javascript:;"><img src="" alt=""></a><span></span></div>
+                <div><a href="javascript:;"><img src="" alt=""></a><span></span></div>
+            </div>
+            <div class="like_hd like_bd">
+                <h2>
+                    大家正在看:
+                </h2>
+                <div><a href="javascript:;"><img src="" alt=""></a><span></span></div>
+                <div><a href="javascript:;"><img src="" alt=""></a><span></span></div>
+                <div><a href="javascript:;"><img src="" alt=""></a><span></span></div>
+                <div><a href="javascript:;"><img src="" alt=""></a><span></span></div>
+            </div>
+        </div>
+        <div class="searchresult">
+            <div class="like_hd">
+                <h2>
+                    本次搜索结果:
+                </h2>
+                <h3>
+                    第 <i>1</i> 页，共 <i>5</i> 页
+                </h3>
+                <div><a href="javascript:;"><img src="upload/2.jpg" alt=""></a><span>三体三体三体</span></div>
+                <div><a href="javascript:;"><img src="upload/2.jpg" alt=""></a><span>三体三体三体</span></div>
+                <div><a href="javascript:;"><img src="upload/2.jpg" alt=""></a><span>三体三体三体</span></div>
+                <div><a href="javascript:;"><img src="upload/2.jpg" alt=""></a><span>三体三体三体</span></div>
+                <div><a href="javascript:;"><img src="upload/2.jpg" alt=""></a><span>三体三体三体</span></div>
+                <div><a href="javascript:;"><img src="upload/2.jpg" alt=""></a><span>三体三体三体</span></div>
+                <div><a href="javascript:;"><img src="upload/2.jpg" alt=""></a><span>三体三体三体</span></div>
+                <div><a href="javascript:;"><img src="upload/2.jpg" alt=""></a><span>三体三体三体</span></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/search.js"></script>
+</body>
+</html>
